@@ -47,7 +47,7 @@ namespace BakeryStore.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_Login", useremailParameter, passwordParameter);
         }
-    
+
         public virtual int usp_newPerson(string lastName, string firstName, string email, string phone, string password)
         {
             var lastNameParameter = lastName != null ?
