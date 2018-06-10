@@ -15,14 +15,14 @@ namespace BakeryStore.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your local bakery since 1999.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "We would love to hear from you!";
 
             return View();
         }
