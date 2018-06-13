@@ -13,6 +13,12 @@ namespace BakeryStore.Controllers
         // GET: AddProduct
         public ActionResult Index()
         {
+            if (Session["PersonKey"] == null)
+            {
+                Message m = new Message();
+                m.MessageText = "Dear employees, you must log in first to add a product.";
+                return RedirectToAction("Result", m);
+            }
             return View();
         }
         [HttpPost]
@@ -27,7 +33,10 @@ namespace BakeryStore.Controllers
             return View("Result", m);
            
         }
-        
-       
+        public ActionResult Result(Message m)
+        {
+            return View(m);
+        }
+
     }
 }
